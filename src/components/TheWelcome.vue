@@ -1,86 +1,127 @@
 <script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+// Variable reactiva
+import { ref} from 'vue'
+
+const registro = ref({
+  nombre: '',
+  apellido: '',
+  genero: '',
+  edad: '',
+  email: '',
+  password: '',
+  opciones: [],
+  administrador: false,
+  observaciones: '',
+  grupo: ''
+})
+
+const guardar = (e) => {
+  e.preventDefault();
+  console.log(registro.value);
+  cambio.value=false
+}
+
+const restablecer = (e) => {
+  e.preventDefault();
+  //Limpiar los campos
+  nombre.value = '';
+  apellido.value = '';
+  edad.value = '';
+  email.value = '';
+  password.value = '';
+  observaciones.value = '';
+  grupo.value = '';
+}
+
+let cambio = ref(true)
 </script>
 
 <template>
   <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+    
+    <template ></template>
+    <form>
+      <label for="nombre">
+      Nombre:
+      <br>
+      <input type="text" id="nombre" v-model="registro.nombre">
+    </label>
+    <br>
+    <label for="apellido">
+      Apellido:
+      <br>
+      <input type="text" id="apellido" v-model="registro.apellido">
+    </label>
+    <br>
+    <label >
+      <strong>Género:</strong>
+      <br>
+      <label for="g-masculino">Masculino<input type="radio" id="g-masculino" name="genero" value="m" v-model="registro.genero"></label>
+      <label for="g-femenino">Femenino<input type="radio" id="g-femenino" name="genero" value="f" v-model="registro.genero"></label>
+    </label>
+    <br>
+    <label for="edad">
+      Edad
+      <br>
+      <input type="number" id="edad" max="100" min="16" v-model="registro.edad">
+    </label>
+    <br>
+    <label for="email">
+      Correo:
+      <br>
+      <input type="email" id="email" v-model="registro.email">
+    </label>
+    <br>
+    <label for="password">
+      Contraseña:
+      <br>
+      <input type="password" id="password" v-model="registro.password">
+    </label>
+    <br>
+    <label>
+      Conocimientos
+    </label>
+    <br>
+    <label for="HTML">HTML <input type="checkbox" id="HTML" v-model="registro.opciones" value="HTML"></label>
+    <label for="CSS">CSS <input type="checkbox" id="CSS" v-model="registro.opciones" value="CSS"></label>
+    <label for="javascript">javascript <input type="checkbox" id="javascript" v-model="registro.opciones" value="javascript"></label>
+    <br>
+    <label for="administrador"></label>
+    <input type="checkbox" v-model="registro.administrador">
+    ¿Usuario administrador?
+    <br>
+    <label for="observaciones"><strong>Comentario:</strong></label>
+    <br>
+    <textarea name="observaciones" id="observaciones" cols="30" rows="5" v-model="registro.observaciones"></textarea>
+    <br>
+    <label for="grupo">
+      grupo
+      <select name="grupo" id="grupo" v-model="registro.grupo">
+        <option value="0" selected>...</option>
+        <optgroup label="seccion 1">
+          <option value="1-1">1</option>
+          <option value="1-2">2</option>
+          <option value="1-3">3</option>
+          <option value="1-4">4</option>
+        </optgroup>
+        <optgroup label="seccion 2">
+          <option value="2-1">1</option>
+          <option value="2-2">2</option>
+          <option value="2-3">3</option>
+          <option value="2-4">4</option>
+        </optgroup>
+      </select>
+    </label>
+    <br>
+    <button @click="guardar" class="btnGuardar">Guardar</button>
+    <button @click="restablecer" class="btnRestablecer">Restablecer</button>
+    <br>
+    <div class="divYa">
+    <a href="" class="yaCuenta">Ya tengo cuenta</a>
+  </div>
 
-    Vues
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
-
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank">Cypress Component Testing</a>.
-
-    <br />
-
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    </form> 
   </WelcomeItem>
 </template>
+
+

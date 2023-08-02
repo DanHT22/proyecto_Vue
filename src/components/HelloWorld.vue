@@ -10,11 +10,9 @@ defineProps({
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+    <h3>Daniela Heredia Tolumes</h3>
+    <br>
+    <p>Perdon profe no pude acabar, esta semana tuve algunos problemas y no he tenido tiempo de ponerme al día con las clases, pero por lo menos añadi alo con lo que me pueda calificar.</p>
   </div>
 </template>
 
@@ -24,10 +22,12 @@ h1 {
   font-size: 2.6rem;
   position: relative;
   top: -10px;
+  color: rgb(244, 189, 233);
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
+  color: bisque;
 }
 
 .greetings h1,
