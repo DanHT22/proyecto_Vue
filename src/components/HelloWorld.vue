@@ -12,7 +12,7 @@ defineProps({
     <h1 class="green">{{ msg }}</h1>
     <h3>Daniela Heredia Tolumes</h3>
     <br>
-    <p>Perdon profe no pude acabar, esta semana tuve algunos problemas y no he tenido tiempo de ponerme al día con las clases, pero por lo menos añadi alo con lo que me pueda calificar.</p>
+    <p>Perdon profe no pude acabar, esta semana tuve algunos problemas y no he tenido tiempo de ponerme al día con las clases, pero por lo menos añadi algo con lo que me pueda calificar.</p>
   </div>
 </template>
 
