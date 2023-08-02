@@ -1,6 +1,17 @@
 <template>
-    <div>
+    <div class="contenido__Div">
         <h1>Contenido</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam soluta praesentium vero in repudiandae consequuntur sequi perferendis nulla vitae sit quo delectus eius itaque, mollitia cumque reprehenderit consequatur sunt repellat.</p>
+        <p>
+            No Logro poder consumir la API :(
+                <br>
+            Voy a seguir trabajando en estos días para completar la evaluación , por el momento lo tengo que dejar así , perdone nuevamente , ahora si se me juntaron muchas cosas.
+        </p>
     </div>
 </template>
+
+<style>
+.contenido__Div{
+    padding: 10px;
+    border: 1px solid white;
+}
+</style>

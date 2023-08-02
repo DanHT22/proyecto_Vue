@@ -87,8 +87,8 @@ let cambio = ref(true)
     <label for="javascript">javascript <input type="checkbox" id="javascript" v-model="registro.opciones" value="javascript"></label>
     <br>
     <label for="administrador"></label>
-    <input type="checkbox" v-model="registro.administrador">
     ¿Usuario administrador?
+    <input type="checkbox" v-model="registro.administrador">
     <br>
     <label for="observaciones"><strong>Comentario:</strong></label>
     <br>
@@ -112,10 +112,9 @@ let cambio = ref(true)
         </optgroup>
       </select>
     </label>
-    <br>
+    <br> <br>
     <button @click="guardar" class="btnGuardar">Guardar</button>
     <button @click="restablecer" class="btnRestablecer">Restablecer</button>
-    <br>
     <div class="divYa">
     <a href="" class="yaCuenta">Ya tengo cuenta</a>
   </div>
@@ -123,5 +122,56 @@ let cambio = ref(true)
     </form> 
   </WelcomeItem>
 </template>
+
+<style>
+form{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btnGuardar{
+  margin-right: 10px;
+  background-color: rgb(144, 243, 227);
+  border: 0;  
+  border-radius: 5px;
+}
+
+.btnRestablecer{
+  margin-right: 10px;
+  background-color: rgb(243, 165, 21);
+  border: 0;  
+  border-radius: 5px;
+}
+
+a{
+  color: rgb(228, 215, 240);
+}
+
+label{
+  color: aliceblue;
+}
+
+input{
+  background-color: beige;
+  margin: 3px;
+  border: 0; 
+}
+
+textarea{
+  background-color: beige;
+  margin: 3px;
+  border: 0; 
+}
+
+.divYa{
+  margin-top: 15px;
+}
+
+.yaCuenta{
+  margin-left: 13px;
+  border: 1px solid white;
+  padding: 5px;
+}
+</style>
 
 
